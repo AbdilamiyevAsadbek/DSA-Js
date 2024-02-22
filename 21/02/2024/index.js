@@ -19,13 +19,25 @@
 //         this.tail = node
 //         ++
 //     }
-// }
+// }t
 
 // Find loop / Circle
 
-class Node {
-  constructor(value) {
-    this.value = value;
-    this.next = null;
+// homeworks
+
+const maxProfit = (prices) => {
+  let left = 0;
+  let right = 1;
+  let max_profit = 0;
+  while (right < prices.length) {
+    if (prices[left] < prices[right]) {
+      let profit = prices[right] - prices[left];
+
+      max_profit = Math.max(max_profit, profit);
+    } else {
+      left = right;
+    }
+    right++;
   }
-}
+  return max_profit;
+};
